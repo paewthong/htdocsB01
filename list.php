@@ -2,7 +2,7 @@
 // ===== Database Config =====
 $host = "localhost";
 $user = "root";
-$pass = "";
+$pass = "password";
 $db   = "student_db.sql";
 
 // ===== Connect Database =====
