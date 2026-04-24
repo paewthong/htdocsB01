@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db   = "student_db";
+$db   = "student_db.sql";
 
 // ===== Connect Database =====
 $conn = new mysqli($host, $user, $pass, $db);
@@ -74,6 +74,7 @@ $result = $conn->query($sql);
 
 </body>
 </html>
+
 
 <?php
 $conn->close();
