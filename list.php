@@ -45,6 +45,7 @@ $result = $conn->query($sql);
         <th>Email</th>
         <th>Phone</th>
         <th>Action</th>
+        
     </tr>
 
     <?php if ($result && $result->num_rows > 0): ?>
@@ -54,6 +55,8 @@ $result = $conn->query($sql);
                 <td><?= htmlspecialchars($row['name']) ?></td>
                 <td><?= htmlspecialchars($row['email']) ?></td>
                 <td><?= htmlspecialchars($row['phone']) ?></td>
+                <td><?php echo $row['email']; ?></td>
+                <td><?php echo $row['phone']; ?></td>
                 <td>
                     <a href="edit.php?id=<?= $row['id'] ?>">Edit</a> |
                     <a href="delete.php?id=<?= $row['id'] ?>" 
