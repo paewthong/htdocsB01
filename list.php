@@ -1,12 +1,10 @@
 <?php
-// ===== Database Config =====
 $host = "localhost";
 $user = "root";
-$pass = "";
-$db   = "student_db.sql";
+$pass = ""; 
+$db   = "student_db"; 
 
-// ===== Connect Database =====
-$conn = new mysqli('localhost', 'root', '', 'student_db');
+$conn = new mysqli($host, $user, $pass, $db);
 
 // Check connection
 if ($conn->connect_error) {
@@ -45,7 +43,6 @@ $result = $conn->query($sql);
         <th>Email</th>
         <th>Phone</th>
         <th>Action</th>
-        
     </tr>
 
     <?php if ($result && $result->num_rows > 0): ?>
@@ -55,8 +52,6 @@ $result = $conn->query($sql);
                 <td><?= htmlspecialchars($row['name']) ?></td>
                 <td><?= htmlspecialchars($row['email']) ?></td>
                 <td><?= htmlspecialchars($row['phone']) ?></td>
-                <td><?php echo $row['email']; ?></td>
-                <td><?php echo $row['phone']; ?></td>
                 <td>
                     <a href="edit.php?id=<?= $row['id'] ?>">Edit</a> |
                     <a href="delete.php?id=<?= $row['id'] ?>" 
@@ -66,7 +61,7 @@ $result = $conn->query($sql);
         <?php endwhile; ?>
     <?php else: ?>
         <tr>
-            <td colspan="5">No data found</td>
+            <td colspan="5">No data found</td> 
         </tr>
     <?php endif; ?>
 
@@ -74,7 +69,6 @@ $result = $conn->query($sql);
 
 </body>
 </html>
-
 
 <?php
 $conn->close();
