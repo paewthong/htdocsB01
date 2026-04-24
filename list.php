@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $user = "root";
-$password = ""; 
+$pass = "password"; 
 $db   = "student_db"; 
 
 $conn = new mysqli($host, $user, $pass, $db);
@@ -12,6 +12,7 @@ if ($conn->connect_error) {
 }
 
 // ===== Fetch Data =====
+// ตัวอย่าง: ถ้าใน Database ชื่อตารางคือ students ให้เติม s ลงไป
 $sql = "SELECT id, name, email, phone FROM students ORDER BY id DESC";
 $result = $conn->query($sql);
 ?>
